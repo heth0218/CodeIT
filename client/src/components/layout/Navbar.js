@@ -44,8 +44,8 @@ const Navbar = ({ user: { user, isAuthenticated }, logout, icon, title }) => {
 
                                         ) : (
                                                 <li>
-                                                    Add A new course
-                                                    <Link to="/addCourse" className="waves-effect waves-light"><i className="material-icons">add</i></Link>
+                                                     <Link to="/addCourse" className="waves-effect waves-light">Add a new course</Link>
+                                                   
                                                 </li>)}
                                         <li>
                                             <span>

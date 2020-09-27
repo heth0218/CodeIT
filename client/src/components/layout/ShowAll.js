@@ -16,11 +16,12 @@ const ShowAll = ({ show, getAnalytics, current, loadUser }) => {
     return (
         <div>
             <div className="container">
-                <h1>
+                <h2 className="center">
                     <span class="grey-text">All</span>
                     <span className="teal-text"> Students</span>
-                </h1>
+                </h2>
             </div>
+            <br/>
             { show && show.map(sh =>
                 <div className="container" float="left" width="50%">
                     <div className="col s6 m4 l6">

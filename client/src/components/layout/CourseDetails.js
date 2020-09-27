@@ -6,6 +6,7 @@ import { setQuiz, getAnalytics, showAll } from '../../actions/courseActions'
 import { loadUser } from '../../actions/userActions'
 import axios from 'axios'
 import M from 'materialize-css/dist/js/materialize.min.js';
+import '../../App.css';
 
 const CourseDetails = ({ myCourses, current, user, setQuiz, getAnalytics, showAll, loadUser }) => {
     const { Name, description, videos, quiz, Thumbnail } = current
@@ -47,10 +48,10 @@ const CourseDetails = ({ myCourses, current, user, setQuiz, getAnalytics, showAl
     return (
         <div className="container" style={{ marginBottom: '100px' }}>
             <div className="center">
-                <h1>
+                <h2>
                     <span class="grey-text">Course</span>
                     <span className="teal-text"> Details</span>
-                </h1>
+                </h2>
             </div>
             <br />
             <br />
@@ -59,7 +60,7 @@ const CourseDetails = ({ myCourses, current, user, setQuiz, getAnalytics, showAl
                     <div className="card red lighten-5">
                         <div className="card-image">
                             <img src={Thumbnail} />
-                            <h3><span className="card-title teal-text">{Name}</span></h3>
+                            <h2><span className="card-title c-name">{Name}</span></h2>
                             <span></span>
                         </div>
                     </div>
@@ -76,28 +77,37 @@ const CourseDetails = ({ myCourses, current, user, setQuiz, getAnalytics, showAl
 
                 </div>
             }
-            <div className="center"><h3 className="teal-text">Range of Tutorials for this course</h3></div>
-            <div className="row">
-                <div className="col s12 m12 l8">
-                    <div className="collection">
-                        {videos && videos.map((video) =>
-                            <VideoPlayer video={video} key={video.id} />
-                        )}
+            <div className="center"><h4 className="c-name center">Range of tutorials for this course</h4></div>
+            <br/>
+            <div className="container panel">
+                <div className="row">
+                    <div className="col s12 m12 l8">
+                        <div className="collection">
+                            {videos && videos.map((video) =>
+                                <VideoPlayer video={video} key={video.id} />
+                            )}
+                        </div>
                     </div>
                 </div>
             </div>
-            <div className="center"><h3 className="teal-text">Fun Quizes waiting for you!</h3></div>
-            <div className="row">
-                <div className="col s12 m12 l8">
-                    <div className="collection">
-                        {((mine && quiz) || (user.role === 'admin' && quiz)) && quiz.map((qu) =>
-                            <div>
-                                <Link href="#!" to='/google' class="collection-item" onClick={setQuizz.bind(this, qu)} ><span class="badge"></span><h4>{qu.Title}</h4><br /><p>{qu.Description}</p></Link>
-                            </div>
-                        )}
+            <br/>
+            <center><div className="hr"></div></center>
+            <div className="center"><h4 className="c-name center">Fun quizes waiting for you!</h4></div>
+            <br/>
+            <div className="container panel">
+                <div className="row">
+                    <div className="col s12 m12 l8">
+                        <div className="collection">
+                            {((mine && quiz) || (user.role === 'admin' && quiz)) && quiz.map((qu) =>
+                                <div>
+                                    <Link href="#!" to='/google' class="collection-item" onClick={setQuizz.bind(this, qu)} ><span class="badge"></span><h4>{qu.Title}</h4><br /><p>{qu.Description}</p></Link>
+                                </div>
+                            )}
+                        </div>
                     </div>
                 </div>
             </div>
+            
             {
                 user.role === 'admin' && <div className="right">
                     <Link to='/video' class="btn-floating btn-large waves-effect waves-light teal"><i class="material-icons">add</i></Link>&nbsp;&nbsp;&nbsp;&nbsp;
