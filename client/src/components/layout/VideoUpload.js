@@ -29,7 +29,7 @@ const VideoUpload = ({ saveVideo, loadUser, current }) => {
         let file = files[0];
         let storageRef = firebase.storage().ref(`${bucketName}/${file.name}`);
         let uploadTask = storageRef.put(file);
-        uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED, () => {
+        await uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED, () => {
             let downloadURL = uploadTask.snapshot.downloadURL
         })
 

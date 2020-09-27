@@ -1,6 +1,6 @@
 module.exports = async (req, res, next) => {
     const { name, email, password } = req.body;
-    const emailVal = email.length < 256 && /^[^@]+@[^@]{2,}\.[^@]{2,}$/.test(email)
+    const emailVal = email.length < 25 && /^[^@]+@[^@]{2,}\.[^@]{2,}$/.test(email)
     if (!name) {
         return res.status(404).send({ msg: 'Kindly enter your name!' });
     }

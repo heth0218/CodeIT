@@ -24,6 +24,10 @@ const CourseSchema = new mongoose.Schema(
     Thumbnail: {
       type: String,
     },
+    Price: {
+      type: Number,
+      required: true,
+    },
   },
   {
     toJSON: { virtuals: true },

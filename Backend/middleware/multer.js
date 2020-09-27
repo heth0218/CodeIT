@@ -15,11 +15,15 @@ const storage = multer.diskStorage({
 exports.upload = multer({
   storage: storage,
   fileFilter: (req, file, cb) => {
+    console.log(file);
     if (
       file.mimetype == 'image/png' ||
       file.mimetype == 'image/jpg' ||
       file.mimetype == 'image/jpeg' ||
-      file.mimetype == 'text/csv'
+      file.mimetype == 'text/csv' ||
+      file.mimetype == 'application/vnd.ms-excel' ||
+      file.mimetype ==
+        'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
     ) {
       cb(null, true);
     } else {

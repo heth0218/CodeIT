@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import axios from 'axios'
 import { sendResponse } from '../../actions/courseActions'
+import M from 'materialize-css/dist/js/materialize.min.js';
 
 const GoogleForm = ({ quiz, user, current, sendResponse }) => {
     const [file, setFile] = useState();
@@ -17,6 +18,7 @@ const GoogleForm = ({ quiz, user, current, sendResponse }) => {
         console.log(formData)
 
         sendResponse(formData, current._id, quiz._id)
+        M.toast({ html: 'Response submitted!' })
         // const config = {
         //     headers: {
         //         'Content-Type': 'application/json',
@@ -38,13 +40,14 @@ const GoogleForm = ({ quiz, user, current, sendResponse }) => {
             <iframe src={quiz.Link} width="100%" height="945" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
             <br /><br />
             {
-                user.role === 'admin' && (<div>
-                    <h3>Submit the responses here</h3>
+                user.role === 'admin' && (<div className="container" style={{ marginBottom: "150px" }}>
+                    <h3 className="teal-text">Submit the responses here</h3>
                     <div className="form-group">
                         <input type="file" onChange={onFileChange} />
                     </div>
+                    <br />
                     <input type="submit" value="Sumit" onClick={onSubmit}
-                        className="btn btn-large btn-extended waves-effect waves-grey white black-text" />
+                        className="btn btn-large btn-extended waves-effect waves-grey teal white-text" />
                 </div>)
             }
         </div>

@@ -58,7 +58,7 @@ const AddCourse = ({ addCourse, loadUser, user }) => {
         const url = await storageRef.child('images/' + files[0].name).getDownloadURL();
         setUrl(url)
         console.log(url)
-        M.toast({ html: "Video saved successfully" });
+        M.toast({ html: "Course saved successfully" });
 
         if (!url) {
             return M.toast({ html: 'Please upload a Thumbnail' })

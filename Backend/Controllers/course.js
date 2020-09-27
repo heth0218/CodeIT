@@ -1,8 +1,5 @@
-const Course = require('../Models/Course');
+const Course = require('../models/Course');
 const REDIS_PORT = process.env.PORT || 6379;
-const redis = require('redis');
-
-const client = redis.createClient(REDIS_PORT);
 
 exports.AllCourses = async (req, res, next) => {
   try {

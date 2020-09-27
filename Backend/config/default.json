@@ -1,4 +1,10 @@
 {
-    "mongoURI": "mongodb+srv://Heth:Gala567@cluster0.kklpg.mongodb.net/Code_IT?retryWrites=true&w=majority",
-    "jwtSecret": "Hethgala"
+  "mongoURI": "mongodb+srv://Heth:Gala567@cluster0.kklpg.mongodb.net/Code_IT?retryWrites=true&w=majority",
+  "jwtSecret": "Hethgala",
+  "SMTP_HOST": "smtp.mailtrap.io",
+  "SMTP_PORT": "587",
+  "SMTP_EMAIL": "9e3fe0f3d8ecd3",
+  "SMTP_PASSWORD": "f5c2c418f6e27b",
+  "FROM_EMAIL": "noreply@jashshah.com",
+  "FROM_NAME": "Jash Shah"
 }
