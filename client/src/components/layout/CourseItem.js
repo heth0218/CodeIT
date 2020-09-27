@@ -27,7 +27,7 @@ const CourseItem = ({ course, setCurrent }) => {
                                 class="btn-floating waves-effect waves-light teal  darken-1"
                                 onClick={setCurrentCourse}
                             >
-                                <i class="material-icons">keyboard_arrow_right</i>
+                                <i class="material-icons">chevron_right</i>
                             </Link></span>
                     </div>
                     <div class="card-reveal">

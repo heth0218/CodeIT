@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Player } from 'video-react';
 import { connect } from 'react-redux'
+import '../../App.css';
 
 const VideoPlayer = ({ video, myCourses, current, user }) => {
 
@@ -28,7 +29,7 @@ const VideoPlayer = ({ video, myCourses, current, user }) => {
     return (
         <div>
             <h4>
-                <a href="#!" class="collection-item" onClick={onVideoClick}><span class="badge"></span>{Title}</a>
+                <a href="#!" class="collection-item" onClick={onVideoClick}><span class="badge"></span><span class="vid-title">{Title}</span></a>
                 <div style={{ "height": "auto", "width": "300px", "marginLeft": "500px", "margin": "50px " }}>
                     {((clicked && mine) || clicked && user.role === 'admin') && <Player>
                         <source src={Vurl} />
